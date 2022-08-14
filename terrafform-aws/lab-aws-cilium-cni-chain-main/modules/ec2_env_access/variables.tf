@@ -21,9 +21,6 @@ variable "token" {
   type = string
   sensitive = true
 }
-variable "hostname" {
-  description = "Fortigate ip address"
-}
 variable "public_subnet" {
   description = "Network_id_for_ec2"
 }
