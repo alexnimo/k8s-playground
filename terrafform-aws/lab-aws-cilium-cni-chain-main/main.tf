@@ -45,8 +45,6 @@ module "ec2_env_access" {
   node_iam_role_arn      = module.eks.iam_role_NodeGroupRole_arn
   tags                   = var.user_name
   group                  = var.group
-  token                  = var.fortigate_access_token
-  hostname               = var.fortigate_ip_address
   ami                    = var.ami
   instance_type          = var.instance_type
   ec2_password_var       = var.ec2_password_var
