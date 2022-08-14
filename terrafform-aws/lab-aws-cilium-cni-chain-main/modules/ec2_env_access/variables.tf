@@ -13,14 +13,6 @@ variable "vpc_id" {
 variable "tags" {
     type = string
 }
-variable "group" {
-  description = "Fortigate default group for bookmarks"
-}
-variable "token" {
-  description = "Fortigate api user token"
-  type = string
-  sensitive = true
-}
 variable "public_subnet" {
   description = "Network_id_for_ec2"
 }
