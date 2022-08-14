@@ -18,6 +18,7 @@ resource "helm_release" "argocd" {
   repository  = "https://argoproj.github.io/argo-helm"
   chart       = "argo-cd"
   
+  values    = [file("../../../values.yaml")]
   set {
     name  = "server.service.type"
     value = "NodePort"
