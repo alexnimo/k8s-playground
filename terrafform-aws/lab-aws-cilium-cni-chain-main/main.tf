@@ -44,7 +44,6 @@ module "ec2_env_access" {
   vpc_id                 = module.vpc.aws_vpc_id
   node_iam_role_arn      = module.eks.iam_role_NodeGroupRole_arn
   tags                   = var.user_name
-  group                  = var.group
   ami                    = var.ami
   instance_type          = var.instance_type
   ec2_password_var       = var.ec2_password_var
