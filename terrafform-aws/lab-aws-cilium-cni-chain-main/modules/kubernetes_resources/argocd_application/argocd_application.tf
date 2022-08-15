@@ -18,7 +18,7 @@ resource "helm_release" "argocd" {
   repository  = "https://argoproj.github.io/argo-helm"
   chart       = "argo-cd"
   
-  values    = var.argocd-values
+  #values    = var.argocd-values
   set {
     name  = "server.service.type"
     value = "NodePort"
