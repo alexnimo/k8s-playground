@@ -33,7 +33,7 @@ module "eks" {
   region             = var.region
   tags               = var.user_name
 }
-module "ec2_env_access" {
+/*module "ec2_env_access" {
   source                 = "./modules/ec2_env_access"
   cluster_name_var       = module.eks.eks_cluster_name
   public_subnet          = module.vpc.aws_subnet_public_cidrs_az
@@ -47,7 +47,7 @@ module "ec2_env_access" {
   ami                    = var.ami
   instance_type          = var.instance_type
   ec2_password_var       = var.ec2_password_var
-}
+}*/
 module "cilium" {
   source             = "./modules/kubernetes_resources/cilium"
   depends_on         = [module.eks]

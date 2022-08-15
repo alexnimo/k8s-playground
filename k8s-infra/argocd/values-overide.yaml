@@ -8,9 +8,8 @@ server:
   configEnabled: true
   config:
     repositories: |
-      - type: git
-        url: https://github.com/alexnimo/k8s-playground.git
-      - name: argo-helm
+      - type: helm
+      - name: argocd
         type: helm
         url: https://argoproj.github.io/argo-helm
   additionalApplications: 

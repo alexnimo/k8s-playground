@@ -1,7 +1,7 @@
-variable "ec2_password_var" {
+/*variable "ec2_password_var" {
   type = string
   sensitive = true
-}
+}*/
 variable "region_var" {
     type = string
 }

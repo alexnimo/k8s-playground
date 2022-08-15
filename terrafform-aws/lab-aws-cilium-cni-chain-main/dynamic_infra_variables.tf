@@ -71,5 +71,4 @@ variable "kyverno" {
 variable "argocd" {
   description = "Choose if enable=true or disable=false this module"
   type = bool
-  default = true
 }
