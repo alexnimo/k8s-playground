@@ -1,7 +1,7 @@
 resource "aws_lb" "argocd_nlb" {
   count              = "${var.argocd ? 1 : 0}"
   name               = "argocd-nlb-${var.tags}"
-  internal           = true
+  internal           = false
   load_balancer_type = "network"
   subnets            = var.subnets
 
