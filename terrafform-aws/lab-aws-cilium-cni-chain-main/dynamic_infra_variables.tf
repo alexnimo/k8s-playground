@@ -55,10 +55,6 @@ variable "instance_type" {
   description = "Ec2 instance_type for vnc"
   default = "t2.medium"
 }
-variable "group" {
-  description = "Fortigate default group for bookmarks"
-  default = "CyberSecTeam-Infra"
-}
 # Below configuration for disable or enable modules
 variable "metrics_server" {
   description = "Choose if enable=true or disable=false this module"
