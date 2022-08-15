@@ -19,7 +19,7 @@ resource "helm_release" "argocd" {
   chart       = "argo-cd"
   
   values    =  [
-        "${file("values-overide.yaml")}"
+        "${file("${path.module}/values-overide.yaml")}"
   ]
   set {
     name  = "server.service.type"
