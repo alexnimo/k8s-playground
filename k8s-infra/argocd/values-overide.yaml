@@ -2,10 +2,14 @@
 ## Ref: https://github.com/argoproj/argo-cd
 ##
 ## Server
+dex:
+  enabled: false
 server:
   ## ArgoCD config
   ## reference https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
   configEnabled: true
+  extraArgs:
+    - --insecure
   config:
     repositories: |
       - type: helm
