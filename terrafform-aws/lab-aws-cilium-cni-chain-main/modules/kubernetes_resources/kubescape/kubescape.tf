@@ -1,11 +1,3 @@
-module "eks" {
-
-  source     ="./modules/eks"
-  eks_cluster = output.eks_cluster_name
-
-}
-
-
 resource "kubernetes_namespace" "kubescape_namespace" {
   count  = "${var.kubescape ? 1 : 0}"
   metadata {

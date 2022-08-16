@@ -73,8 +73,9 @@ module "argocd_application" {
   cluster_name       = module.eks.eks_cluster_name
 }
 module "kubescape" {
-  kubescape     = var.kubescape
+  kubescape     =     var.kubescape
   source             = "./modules/kubernetes_resources/kubescape"
   kubescape_account_guid   = var.kubescape_account_guid
+  eks_cluster_name     = module.eks.eks_cluster_name
   depends_on         = [module.cilium]
 }
