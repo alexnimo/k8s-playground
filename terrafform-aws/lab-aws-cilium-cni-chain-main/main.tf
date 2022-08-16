@@ -75,5 +75,6 @@ module "argocd_application" {
 module "kubescape" {
   kubescape     = var.kubescape
   source             = "./modules/kubernetes_resources/kubescape"
+  kubescape_account_guid   = var.kubescape_account_guid
   depends_on         = [module.cilium]
 }
