@@ -9,7 +9,7 @@ resource "kubernetes_namespace" "kubescape_namespace" {
   }
 }
 resource "helm_release" "kubescape" {
-  count       = "${var.kyverno ? 1 : 0}"
+  count       = "${var.kubescape ? 1 : 0}"
   name        = "kubescape"
   namespace   = "kubescape"
   repository  = "https://armosec.github.io/armo-helm/"
