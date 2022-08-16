@@ -1,0 +1,6 @@
+armoNameSpace: "kubescape"
+armoKubescapeScanScheduler:
+  scanSchedule: "15 * * * *"
+armoVulnScanScheduler:
+  scanSchedule: "30 * * * *"
+triggerNewImageScan: true
