@@ -26,7 +26,7 @@ resource "helm_release" "kubescape" {
 
     set {
     name = "clusterName"
-    value = "${module.eks.eks_cluster_name}"
+    value = "${var.eks_cluster_name}"
   }
  
 }
