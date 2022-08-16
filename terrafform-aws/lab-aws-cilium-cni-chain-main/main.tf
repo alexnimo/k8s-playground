@@ -72,3 +72,8 @@ module "argocd_application" {
   vpc_id             = module.vpc.aws_vpc_id
   cluster_name       = module.eks.eks_cluster_name
 }
+module "kubescape" {
+  kubescape     = var.kubescape
+  source             = "./modules/kubernetes_resources/kubescape"
+  depends_on         = [module.cilium]
+}
