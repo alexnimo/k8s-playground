@@ -23,5 +23,10 @@ resource "helm_release" "kubescape" {
     name = "accountGuid"
     value = "${var.kubescape_account_guid}"
   }
+
+    set {
+    name = "clusterName"
+    value = "${module.eks.aws_eks_cluster.eks-cluster-lab.name}"
+  }
  
 }
