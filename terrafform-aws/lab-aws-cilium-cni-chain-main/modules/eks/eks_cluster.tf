@@ -1,7 +1,7 @@
 resource "aws_eks_cluster" "eks-cluster-lab" {
   name     = "EKS-${var.tags}"
   role_arn = "${aws_iam_role.EKSClusterRole.arn}"
-  version  = "1.22"
+  version  = "1.23"
   
   vpc_config {
     subnet_ids              = var.subnet_ids

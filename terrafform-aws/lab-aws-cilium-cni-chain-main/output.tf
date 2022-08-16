@@ -6,3 +6,7 @@ output "argocd_access_url" {
   description = "argo-cd https access"
   value       = module.argocd_application.argocd_access_url
 }
+output "argocd_admin" {
+  value = "admin"
+  description = "UI Login user"
+}

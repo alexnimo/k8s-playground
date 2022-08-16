@@ -17,23 +17,6 @@ server:
         type: helm
         url: https://argoproj.github.io/argo-helm
   additionalApplications: 
-    - name: argocd
-      namespace: argocd
-      destination:
-        namespace: argocd
-        server: https://kubernetes.default.svc
-      project: argocd
-      source:
-        helm:
-          version: v3xs
-          valueFiles:
-          - values-override.yaml
-        path: argocd-install/argo-cd
-        repoURL: https://github.com/gokul0815/argocd.git
-        targetRevision: HEAD
-      syncPolicy:
-        syncOptions:
-        - CreateNamespace=true
     - name: argocd-apps
       namespace: argocd
       destination:
