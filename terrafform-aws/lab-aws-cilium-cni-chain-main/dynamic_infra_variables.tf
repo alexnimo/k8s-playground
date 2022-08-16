@@ -68,3 +68,6 @@ variable "argocd" {
   description = "Choose if enable=true or disable=false this module"
   type = bool
 }
+variable "kubescape" {
+  type = bool
+}
