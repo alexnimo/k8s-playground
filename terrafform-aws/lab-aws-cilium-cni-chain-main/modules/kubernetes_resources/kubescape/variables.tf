@@ -8,4 +8,4 @@ variable "kubescape_account_guid" {
   sensitive = true
 }
 
-variable "eks_cluster.name" {}
+variable "eks_cluster_name" {}
