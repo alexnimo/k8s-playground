@@ -7,10 +7,9 @@ spec:
   destination:
     namespace: sec-tools
     server: https://kubernetes.default.svc
-  project: sec-tools
+  project: default
   source:
     chart: armo-cluster-components
-    path: ../../../argocd-app-projects
     repoURL: https://armosec.github.io/armo-helm/
     targetRevision: HEAD
     helm:
