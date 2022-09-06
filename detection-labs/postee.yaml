@@ -1,0 +1,78 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: postee-config
+data:
+  cfg.yaml: |
+    ---
+    # Reference: https://github.com/aquasecurity/postee/blob/main/cfg.yaml
+
+    actions:
+      - type: email
+        name: my-email
+        user: xxxxxx@gmail.com
+        host: smtp.gmail.com
+        port: 587
+        sender: xxxxxxxx@gmail.com
+        recipients:
+          - xxxxxxxxx@xxxxx.com
+        password: xxxxxxxxxx
+        enable: false
+      - type: serviceNow
+        name: my-service-now
+        enable: false
+        user: xxxxxxxxx
+        password: xxxxxxxxxx
+        instance: xxxxxxxx
+      - type: slack
+        name: my-slack
+        enable: true
+        url: >-
+          https://asdasd.webhook/
+      - type: teams
+        name: my-teams
+        enable: false
+        url: >-
+          https://xxxxxxxx.webhook.office.com/webhookb2/xxxxxxxx/IncomingWebhook/xxxxx/xxxxx
+    routes:
+      - name: slack-route
+        input: contains(input.image, "alpine")
+        actions:
+          - my-slack
+        template: legacy-slack
+        plugins:
+          aggregate-issues-number: null
+          aggregate-issues-timeout: null
+          policy-show-all: true
+        output: []
+      - output: []
+        name: email-route
+        input: |
+          contains(input.image,"alpine")
+        actions:
+          - my-email
+        template: legacy
+      - output: []
+        name: servicenow-route
+        input: contains(input.image,"alpine")
+        actions:
+          - my-service-now
+        template: legacy
+      - output: []
+        name: msTeams-route
+        actions:
+          - my-teams
+        template: legacy
+    templates:
+      - name: slack-template
+        rego-package: postee.vuls.slack
+      - name: rego-html
+        rego-package: postee.vuls.html
+      - name: legacy
+        legacy-scan-renderer: html
+      - name: legacy-slack
+        legacy-scan-renderer: slack
+      - name: custom-email
+        url: null
+    name: tenant
+    AquaServer: https://xxxxxxxxxxx.com
