@@ -1,3 +1,17 @@
+Istio cheatsheet:
+
+https://istio-cheatsheet.tetratelabs.io/
+
+Helm installtion:
+
+https://istio.io/latest/docs/setup/install/helm/
+
+How to easily setup Istio service mesh in AWS EKS:
+
+https://www.linkedin.com/pulse/how-easily-setup-istio-service-mesh-aws-eks-ihar-vauchok/
+
+
+
 To get an up-to-date list of Istio configuration profiles, run the:
 
 ```bash
@@ -37,4 +51,22 @@ helm show values istio/istiod
 Lab files:
 
 https://github.com/tetratelabs/cncf-istio-course
+
+Enable automatic sidecar injection on the default namespace by setting the istio-injection label:
+
+```bash
+kubectl label namespace default istio-injection=enabled
+```
+
+To check that the namespace is labeled, run the command below:
+
+```bash
+kubectl get namespace -L istio-injection
+```
+
+To completely remove the Istio installation, we can use the uninstall command:
+
+```bash
+istioctl uninstall --purge
+```
 
