@@ -70,3 +70,9 @@ To completely remove the Istio installation, we can use the uninstall command:
 istioctl uninstall --purge
 ```
 
+Enable sidecar injection:
+
+```bash
+kubectl label namespace default istio-injection=enabled
+```
+
