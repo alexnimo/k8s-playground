@@ -7,7 +7,9 @@ eksctl create cluster --name <lab something> --nodes 3 --node-type t2.large --re
 
 create with config file:
 
+```bash
 eksctl create cluster --config-file=karpenter.yaml
+```
 
 example config files:
 
