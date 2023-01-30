@@ -76,3 +76,6 @@ Enable sidecar injection:
 kubectl label namespace default istio-injection=enabled
 ```
 
+Bookinfo deployment:
+
+https://istio.io/latest/docs/setup/getting-started/#bookinfo
